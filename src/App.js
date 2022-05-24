@@ -15,8 +15,8 @@ function App() {
     }, 1000);
 
     return () => {
-      clearInterval(intervalId)
-    }
+      clearInterval(intervalId);
+    };
   }, []);
 
   const setTime = () => {
@@ -24,14 +24,13 @@ function App() {
 
     const seconds = currDate.getSeconds();
     const minutes = currDate.getMinutes();
-    let hours = currDate.getHours();
+    const hours = currDate.getHours();
 
-    hours = hours <= 12 ? hours : hours - 12
-
-    const secRotate = Math.floor((seconds / 60) * 360) + 90
-    const minRotate = Math.floor((minutes / 60) * 360 + (seconds/60) * 6) + 90
-    const hourRotate = Math.floor(((hours / 12) * 360) + (minutes/60) * 30) + 90
-
+    const secRotate = Math.floor((seconds / 60) * 360) + 90;
+    const minRotate =
+      Math.floor((minutes / 60) * 360 + (seconds / 60) * 6) + 90;
+    const hourRotate =
+      Math.floor((hours / 12) * 360 + (minutes / 60) * 30) + 90;
 
     setSec(secRotate);
     setMin(minRotate);
@@ -44,15 +43,15 @@ function App() {
         <div className="clock-face">
           <div
             className="hand hours"
-            style={{ transform: ` rotate(${hour}deg)` }}
+            style={{ transform: `rotate(${hour}deg)` }}
           ></div>
           <div
             className="hand minutes"
-            style={{ transform: ` rotate(${min}deg)` }}
+            style={{ transform: `rotate(${min}deg)` }}
           ></div>
           <div
             className="hand seconds"
-            style={{ transform: ` rotate(${sec}deg)` }}
+            style={{ transform: `rotate(${sec}deg)` }}
           ></div>
         </div>
       </div>
